@@ -1,0 +1,567 @@
+*{box-sizing: border-box; margin: 0;padding: 0;}
+body {
+  /* Sets the height of the body to 1000px, making the overall page this tall */
+    
+  background-color: #ece0d1;/* Adds padding at the top to make space for the fixed header */
+}
+h2,h1{
+  font-family: "Playfair Display", serif;
+  color: #38220f;
+}
+p{
+  font-family: 'Helvetica Neue', sans-serif;
+}
+.header {
+  
+  width: 80%; /* Sets the width of the header to 80% of the viewport width */
+ /* Sets the height of the header to 60px */
+  background-color: #967259; /* Sets the background color of the header */
+  overflow: auto; /* Handles any overflow content within the header, adding scrollbars if needed */
+  position: fixed; /* Fixes the header to the top of the page; it stays visible when scrolling */
+  top: 0; /* Aligns the header at the top of the viewport */
+  left: 10%; /* Centers the header by leaving 10% margin on the left */
+   /* Makes the header slightly transparent (70% visible) */
+  z-index: 2; /* Ensures the header stays on top of other content */
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.logo {
+  margin-left: 150px; /* Adds 150px margin to the left of the logo */
+  float: left; /* Floats the logo to the left within the header */
+}
+
+.header ul {
+  margin-right: 150px; 
+text-align: center;
+ /* Adds 150px margin to the right of the unordered list */
+  float: right;
+ 
+ 
+ /* Floats the unordered list to the right within the header */
+}
+
+.header ul li {
+  position: relative;
+  list-style: none; /* Removes default bullet points from the list items */
+  display: inline-block; /* Displays list items horizontally */
+  margin-right: 40px; /* Adds 40px space between each list item */
+  font-size: 23px;
+  
+  width: 100px;
+  padding-top: 10px;
+  height: 60px; /* Sets the font size of the list items to 23px */
+}
+.header ul li::after{
+  position: absolute;
+  content: '';
+  bottom: 30%;
+  left:0;
+  opacity: 0;
+  width:0 ;
+  height: 0;
+  background-color:#ece0d1;
+  transition: 1s;
+}
+.header ul li:hover:after{
+  width:100% ;
+  height: 2px;
+  opacity: 0.7;
+}
+.header ul li a {
+  text-decoration: none; /* Removes the underline from links */
+  color: #ece0d1;
+  transition: 1s; ; /* Sets the color of the link text */
+  transition: 0.6s;
+  font-family: 'Helvetica Neue', sans-serif; /* Makes link color changes transition smoothly over 0.6 seconds */
+}
+.header ul li a:active,.header ul li a:focus{
+  color:#38220f;
+}
+.container{
+
+  width: 80%;
+  border:1px ;
+  margin:auto auto;
+
+  
+}
+.products-parent{
+  width: 100%;
+ overflow: auto;
+ margin-top:5%;
+ margin-bottom:5%;
+
+}
+.product1,.product2,.product3{
+  width: 30%;
+  height:100%;
+  border: 1px solid black;
+  float: left;
+  text-align: center;
+  color: #38220f;
+  background-color: #dbc1ac;
+  padding: 40px 7px;
+  position: relative;
+  letter-spacing: 2.2px;
+  
+
+}
+.product2{
+  margin:0 5%;
+}
+.product-info-description{
+  margin-top: 20px;
+  font-size: 19px;
+}
+.image{
+  margin: auto;
+  width: 80%;
+  position: relative;
+}
+
+.product-overlay{
+  position: absolute;
+  width: 50px;
+ 
+  
+  top:0;
+  left: 90%;
+  text-align: center;
+  
+}
+.product-overlay a{
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  color: #38220f;
+  transition: 1s;
+opacity: 0;
+}
+.product-overlay a i{
+  display: block;
+  font-size: 30px;
+  line-height: 50px;
+  
+  
+ 
+ 
+}
+
+.product1:hover  .product-overlay a ,.product2:hover .product-overlay a ,.product3:hover .product-overlay a {opacity: 1;}
+.line{
+ 
+  width: 150px;
+  
+ border:3px solid #38220f;
+ margin: 10px auto;
+}
+/* pseduo element */
+
+.product1::after,.product2::after,.product3::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 0;
+  top:0;
+  left:0;
+  background-color: rgb(150, 114, 89);
+  opacity: 0;
+  transition: 1s;
+  
+  
+}
+.product1:hover::after,.product2:hover::after,.product3:hover::after{
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+}
+/* .product1::before{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  right:0;
+  width:100%;
+  height: 0%;
+  background-color: rgb(150, 114, 89);
+  opacity: 0;
+  transition: 1s;
+}
+.product1:hover::before{
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+} */
+
+
+
+/* div1+h1 direct sibling selector */
+/* div1~h1 general sibling selector */
+/* parent>h1 direct child */
+.wallpaper{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-image: url(../images/401081.jpg);
+  background-size: cover;
+}
+.overlay{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  background-color:rgba(56, 34, 15,0.3);
+  
+}
+.content{
+  text-align: center;
+  width:40%;
+  height:250px;
+letter-spacing: 2px;
+  top:50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+
+}
+.content h1{
+  font-size: 60px;
+  color:#ece0d1;
+}
+.content p{
+  font-size: 40px;
+  color:#dbc1ac;
+}
+.content button{
+
+  margin-top: 10px;
+  padding: 20px 50px;
+  border-radius: 10px;
+
+  font-size: large;
+  font-weight: bold;
+}
+.content button a{
+  font-family: 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  
+}
+.btn1{
+  letter-spacing: 2px;
+  position: relative;
+  margin-right: 50px;
+  background-color: #38220f;
+  z-index: 2;
+  border: 1px solid #ece0d1 ;
+}
+.btn2{
+  letter-spacing: 2px;
+  position: relative;
+  background-color: #ece0d1;
+ 
+  border: 1px solid #38220f ;
+}
+.btn1 a{
+  position: relative;
+  color:#dbc1ac;
+  z-index: 2;
+ 
+}
+ .btn2 a{
+  position: relative;
+  color: #38220f;
+  z-index: 2;
+}
+.btn1::after{
+  
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color:#dbc1ac;
+  opacity: 0;
+  border-radius: 10px;
+  transition: 1s;
+}
+.btn1:hover::after{
+  width: 100%;
+  opacity: 0.2;
+}
+.btn2::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color:#38220f;
+  opacity: 0;
+  border-radius: 10px;
+  transition: 1s;
+}
+.btn2:hover::after{
+  width: 100%;
+  opacity: 0.2;
+}
+.welcome-items{
+  margin-top:5%;
+ overflow: auto;
+
+}
+.welcome-item1,.welcome-item2,.welcome-item3{
+  width: 30%;
+  height:100%;
+  border: 1px solid #38220f;
+  float: left;
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 2px;
+  position: relative;
+  background-color: #dbc1ac;
+}
+
+.welcome-item2{
+  margin:0 5%;
+}
+.welcome-item1 i,.welcome-item2 i,.welcome-item3 i{
+ margin-top: 20px;
+  font-size: 60px;
+  color: #38220f;
+ 
+}
+.welcome-item1 p,.welcome-item2 p,.welcome-item3 p{
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+
+}
+.welcome-item1::after,.welcome-item2::after,.welcome-item3::after{
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: rgb(150, 114, 89);
+  opacity: 0;
+  transition: 1s;
+}
+.welcome-item1:hover:after,.welcome-item2:hover::after,.welcome-item3:hover::after{
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+.welcome-item1 a,.welcome-item2 a,.welcome-item3 a{
+  color: #38220f;
+  text-decoration: none;
+  font-size: 19px;
+  position: relative;
+  opacity: 0;
+  z-index: 2;
+}
+.welcome-item1:hover a,.welcome-item2:hover a ,.welcome-item3:hover a{
+  
+  opacity: 1;
+}
+.recent-newsgp{
+overflow: auto;
+margin-top:5%;
+  
+}
+.recent{
+  width: 30%;
+  float: left;
+  border: 1px solid #38220f;
+  background-color: #dbc1ac;
+  text-align: center;
+  padding: 20px;
+  letter-spacing: 2.5px;
+  position: relative;
+  
+}
+.recent2{
+  margin: 0px 5%;
+}
+.imagedata{
+ 
+ margin: auto;
+ list-style:  none;
+ margin-top: 10px;
+}
+.imagedata li{
+  font-size: 13px;
+  display: inline;
+  margin: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  
+  
+}
+.imagedata li i{
+  margin-right: 3px;
+}
+.recent::after{
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: rgb(150, 114, 89);
+  opacity: 0;
+  transition: 1s;
+}
+.recent:hover:after{
+  height: 100%;
+  opacity: 0.3;
+}
+.offers{
+  overflow: auto;
+}
+.offer{
+  width: 30%;
+
+  border: 1px solid #38220f;
+  float: left;
+  margin-top:5%;
+  position: relative;
+}
+.offer2,.offer5{
+  margin-left:  5%;
+  margin-right: 5%;
+}
+.offer .ic1{
+position: absolute;
+top:20%;
+left: 5%;
+font-size: 50px;
+display: inline;
+}
+.offer .ic1 h2{
+  font-size: 10px
+}
+.offer .content2{ 
+  margin-top: 30px;
+
+}
+.content2 h2{
+margin-left: 80px;
+margin-bottom: 20px;
+font-size: 30px;
+}
+.content2 p{
+ margin-left: 80px;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.offer::after{
+  content: "";
+  position: absolute;
+  top:0;
+left: 0;
+  width: 0;
+  height: 100%;
+  opacity: 0;
+  background-color: #38220f;
+  transition: 0.7s;
+
+}
+.offer:hover::after{
+  width: 100%;
+  opacity: 0.3;
+}
+.containerv2{
+  width: 100%;
+
+overflow: auto;
+
+}
+.sec1{
+  width: 45%;
+ 
+  float: left;
+  margin-left:5%;
+
+  padding: 20px;
+}
+.sec2{
+  width: 50%;
+  float: left;
+ 
+  position: relative;
+}
+.linev2{
+  width: 15%;
+  border: 2px solid #38220f;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.sec1 p{
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #967259;
+}
+.sec1 h1{
+  font-family: "Playfair Display", serif;
+  color: #38220f;
+  font-size: 40px;
+}
+.sec1 ul{
+  list-style: none;
+}
+.sec1 ul li{
+  color: #38220f;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-bottom: 30px;
+  font-size: 27px;
+}
+.imagev2{
+  margin-top: 60px;
+ text-align: center;
+
+ 
+  
+}
+.imagev2 img{
+  margin-top: -50px;
+}
+.sec2 ul{
+ list-style: none;
+ margin-top: -30px;
+ margin-left: -10px;
+}
+.sec2 ul li{
+
+  width: 20px;
+  height: 20px;
+  background-color: #38220f;
+  display: inline-block;
+  border-radius: 10px;
+  transition:0.5s;
+}
+.sec2 ul li:hover{
+  opacity: 0.5;
+}
+.adj{
+  margin: 0px 10px;
+}
+.dimageco{
+  text-align: center;
+  background-color: #38220f;
+}
+.dimageco ul{
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-bottom: 20px;
+ 
+}
+.dimageco ul li{
+  display: inline-block;
+  font-size: 30px;
+  margin-left: 20px;
+  color: #dbc1ac;
+}
